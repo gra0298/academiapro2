@@ -7,7 +7,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <a class="navbar-brand">
-                <img src="/logo/academia.png" width="30" height="30" alt="">
+                <img src="/logo/logopro.png" width="30" height="30" alt="">
             </a>
             <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
