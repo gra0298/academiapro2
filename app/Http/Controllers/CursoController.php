@@ -99,7 +99,21 @@ class CursoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //update verdaderamenteactualiza
+        $cursito=Curso::find($id);
+        //rellenar todos los campos del Curso con lo que viene en la info o request
+        #$cursito->fill($request->all());
+
+        //con este se llennan todos los campos menos imagen
+        $cursito->fill($request->except('imagen'));
+        if($request->hasFile('imagen')){
+            $cursito->imagen = $request->file('imagen')->store('public/cursos');
+        }
+
+        #$request se llena con all()
+        //return $request;
+        $cursito->save();
+        return 'Curso actualizado Correctamente';
     }
 
     /**
