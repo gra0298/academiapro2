@@ -12,8 +12,7 @@
                 <img style="height:180px; width:180px; margin:15px" src="{{ Storage::url($alias->imagen) }}" class="card-img-top mx-auto d-block" alt="Imagen del curso">
                 <div class="card-body">
                     <h5 class="card-title">{{$alias->nombre}}</h5>
-                    <p class="card-text">{{$alias->descripcion}}</p>
-                    <a href="#" class="btn btn-dark">Ver mas</a>
+                    <a href="/cursos/{{$alias->id}}" class="btn btn-dark">Ver mas</a>
                 </div>
             </div>
         </div>

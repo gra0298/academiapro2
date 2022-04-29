@@ -10,7 +10,7 @@ use App\Http\Controllers\heladeria;
 use App\Http\Controllers\ControladorPrecios;
 
 use App\Http\Controllers\CursoController;
-
+use App\Http\Controllers\infoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +54,11 @@ Route::get('iva/nombre/{nombre}/valor/{valor}', [ControladorPrecios::class,'getI
 // Nuevo
 
 Route::resource('cursos',CursoController::class);
+
+//enrutador
+
+//clase 3
+Route::get('nosotros',[InfoController::class,'info']);
+
+//cuando se hace un resourse se pasa sin []
+

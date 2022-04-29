@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Curso;
+use App\Http\Controllers\infoController;
 
 class CursoController extends Controller
 {
@@ -70,7 +71,8 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        //
+        $cursito = Curso::find($id);#find encontrar--que encuentre el id
+        return view('cursos.show',compact('cursito'));#adjunto el cursito $cursito y se adjunta como un string
     }
 
     /**
@@ -81,7 +83,11 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-        //
+        #con firstOrFail() se capturó la excepción y el primer registro encontrado en la BD o lanza error
+        $cursito = Curso::where('id',$id)->firstOrFail();
+        //return $cursito;
+        return view('cursos.edit',compact('cursito'));
+        #el 'cursito' ->$cursito
     }
 
     /**
@@ -106,4 +112,8 @@ class CursoController extends Controller
     {
         //
     }
+
+
+
+
 }
