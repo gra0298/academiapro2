@@ -18,7 +18,11 @@
                         <a class="nav-link" href="#">Nuestros Cursos <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Docentes <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/docentes">Docentes <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/docentes/create">crear docente <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/cursos/create">crear curso <span class="sr-only">(current)</span></a>

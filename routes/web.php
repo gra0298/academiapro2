@@ -10,7 +10,9 @@ use App\Http\Controllers\heladeria;
 use App\Http\Controllers\ControladorPrecios;
 
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\docentesController;
 use App\Http\Controllers\infoController;
+use App\Http\Controllers\infoDocentes;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,5 +62,13 @@ Route::resource('cursos',CursoController::class);
 //clase 3
 Route::get('nosotros',[InfoController::class,'info']);
 
-//cuando se hace un resourse se pasa sin []
+//nosotros:nombre de ruta
+//InfoController:controlador
+//info:metodo al cual accede
+//taller
+//Route::get('docentes',[infoDocentes::class,'docentes']);
+Route::resource('docentes',docentesController::class);#este no sirve
+//Route::get('docentes/create',[docentesController::class,'create']);
+//Route::get('docentes/show',[docentesController::class,'show']);
+
 
