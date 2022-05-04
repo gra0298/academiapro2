@@ -11,7 +11,7 @@
             @csrf {{-- csrf : Es una protección contra ataques malintencionados--}}
 
             <div class="form-group">
-                <label for="nombre">Modificació del nombre del docente</label>
+                <label for="nombre">Modificación del nombre del docente</label>
                 <input id="nombre" class="form-control" type="text" name="nombre" value="{{$docente->nombre}}">
             </div>
             <div class="form-group">

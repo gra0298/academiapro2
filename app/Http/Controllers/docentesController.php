@@ -44,8 +44,9 @@ class docentesController extends Controller
         $docente ->tituloUniversitario = $request->input('tituloUniversitario');
         $docente ->edad = $request->input('edad');
 
-        // if($request->hasFile('imagen')){
-        //  $cursito->imagen = $request->file('imagen')->store('public/cursos');
+        if($request->hasFile('imagen')){
+            $docente->imagen = $request->file('imagen')->store('public/docentes');
+        }
         $docente-> save();
         //return 'docente creado correctamente';
         return view('sobredocentes.correcto');
@@ -61,7 +62,7 @@ class docentesController extends Controller
     public function show($id)
     {
         $docente = Docentes::find($id);//se instancia el modelo
-        return view('docentes.show',compact('docente'));
+        return view('sobredocentes.show',compact('docente'));
 
     }
 
@@ -93,7 +94,7 @@ class docentesController extends Controller
             $docente->imagen = $request->file('imagen')->store('public/docentes');
         }
         $docente->save();
-        return 'Curso actualizado Correctamente';
+        return 'Docente actualizado Correctamente';
     }
 
     /**

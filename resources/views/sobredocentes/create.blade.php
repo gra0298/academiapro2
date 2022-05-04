@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label for="edad">Ingrese una edad del  docente</label>
-                <input id="edad" class="form-control" type="int" name="edad">
+                <input id="edad" class="form-control" type="number" name="edad">
             </div>
             <div class="form-group">
                 <label for="imagen">Cargue una imagen para el  docente</label>

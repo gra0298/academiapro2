@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('docentes', function (Blueprint $table) {
-            $table->timestamps();
+            $table->string('imagen')->after('edad');
 
         });
     }
