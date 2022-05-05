@@ -105,6 +105,19 @@ class docentesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $docente = Docentes::find($id);
+        //return $docente;
+        $urlImagenBD = $docente->imagen;#ruta de la imagen de la BD
+        //return $urlImagenBD;
+        //$rutacompleta = public_path().$nombreImagen;
+        //return $rutacompleta;
+
+        $nombreImagen = str_replace('public/','\storage\\',$urlImagenBD);
+       // return $nombreImagen;
+        $rutacompleta = public_path().$nombreImagen;
+        //return $rutacompleta;
+        unlink($rutacompleta);
+        $docente->delete();
+        return 'Docente eliminado';
     }
 }

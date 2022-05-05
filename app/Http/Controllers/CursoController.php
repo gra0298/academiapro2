@@ -124,7 +124,24 @@ class CursoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cursito = Curso::find($id);
+        //return $cursito;
+        $urlImagenBD = $cursito->imagen;
+        #ruta de la imagen de la BD
+        //return $urlImagenBD;
+        //$rutacompleta = public_path().$urlImagenBD;
+        //return $rutacompleta;
+        $nombreImagen = str_replace('public/','\storage\\',$urlImagenBD);
+        //return $nombreImagen;
+        #el método str_replace:su función es remplazar una parte de la ruta por lo que
+        #nodotros deseemeos--en este código la parte public/ es reemplazada por \storage\
+
+
+        $rutacompleta = public_path().$nombreImagen;
+        //return $rutacompleta;
+        unlink($rutacompleta);
+        $cursito->delete();
+        return 'Curso eliminado';
     }
 
 
