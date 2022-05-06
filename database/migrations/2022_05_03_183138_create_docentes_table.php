@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('tituloUniversitario');
             $table->integer('edad');
+            $table->string('imagen');
             $table->timestamps();
 
         });
