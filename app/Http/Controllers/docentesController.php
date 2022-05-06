@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\infoDocentes;
 use App\Models\docentes;
+use App\Http\Requests\docentesRequest;
 
 class docentesController extends Controller
 {
@@ -37,8 +38,18 @@ class docentesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(docentesRequest $request)
     {
+        /*
+        //Validaciones
+        $validacionDatos = $request->validate([
+            'nombre'=>'required|max:10',
+            'tituloUniversitario|max:10',
+            'edad'=>'required|max:2',
+            'imagen'=>'required|image'
+        ]);*/
+
+
         $docente = new docentes();
         $docente ->nombre = $request->input('nombre');
         $docente ->tituloUniversitario = $request->input('tituloUniversitario');

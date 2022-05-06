@@ -10,6 +10,16 @@
 
             @csrf {{-- csrf : Es una protección contra ataques malintencionados--}}
 
+            @if ($errors->any())
+                @foreach ($errors->all() as $alerta )
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <li>{{$alerta}}</li>
+                        </ul>
+                    </div>
+                @endforeach
+            @endif
+
             <div class="form-group">
                 <label for="nombre">Ingrese nombre del curso</label>
                 <input id="nombre" class="form-control" type="text" name="nombre">

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Curso;
 use App\Http\Controllers\infoController;
+use App\Http\Requests\CursoRequest;
+
+
+
 
 class CursoController extends Controller
 {
@@ -36,8 +40,14 @@ class CursoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CursoRequest $request)
     {
+        //Validaciones
+        /*$validacionDatos = $request->validate([
+            'nombre'=>'required|max:10',
+            'imagen'=>'required|image'
+        ]);*/
+
         // all: me trae toda la informacion almacenada en request
         //return $request->all();
         //creamos una instancia del modelo para manipular la tabla Curso
