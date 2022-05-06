@@ -117,6 +117,29 @@ class docentesController extends Controller
     public function destroy($id)
     {
         $docente = Docentes::find($id);
+        $urlimagenBDdocentes = $docente->imagen;
+        //return $urlimagenBDdocentes;
+        //$rutacompletadocentes=public_path().$urlimagenBDdocentes;
+        //return $rutacompletadocentes;
+        //punto 5.3 obtuve:C:\xampp\htdocs\Laravel_academia\academiapro2\publicpublic/docentes/V2vHpSgnEMBpBbuZXCiiXrFPDSHeDo4nIFAfVq5L.jpg
+        $nombreImagendocentes=str_replace('public/','\storage\\',$urlimagenBDdocentes);
+        //return $nombreImagendocentes;
+        //punto 5.5 obtuve: \storage\/docentes/V2vHpSgnEMBpBbuZXCiiXrFPDSHeDo4nIFAfVq5L.jpg
+        $rutacompletadocentes = public_path().$nombreImagendocentes;
+        //return $rutacompletadocentes;
+        //punto 5.6:  C:\xampp\htdocs\Laravel_academia\academiapro2\public\storage\docentes/V2vHpSgnEMBpBbuZXCiiXrFPDSHeDo4nIFAfVq5L.jpg
+        unlink($rutacompletadocentes);
+        $docente -> delete();
+        return 'ELIMINADO';
+
+
+
+
+
+    }
+}
+/*
+$docente = Docentes::find($id);
         //return $docente;
         $urlImagenBD = $docente->imagen;#ruta de la imagen de la BD
         //return $urlImagenBD;
@@ -129,6 +152,4 @@ class docentesController extends Controller
         //return $rutacompleta;
         unlink($rutacompleta);
         $docente->delete();
-        return 'Docente eliminado';
-    }
-}
+        return 'Docente eliminado'; */
