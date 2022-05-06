@@ -50,10 +50,14 @@ class docentesController extends Controller
         ]);*/
 
 
+
         $docente = new docentes();
         $docente ->nombre = $request->input('nombre');
         $docente ->tituloUniversitario = $request->input('tituloUniversitario');
         $docente ->edad = $request->input('edad');
+
+
+
 
         if($request->hasFile('imagen')){
             $docente->imagen = $request->file('imagen')->store('public/docentes');
